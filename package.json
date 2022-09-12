@@ -4,6 +4,7 @@
   "private": true,
   "homepage": "https://szhosan.github.io/notes-app-react/",
   "dependencies": {
+    "@reduxjs/toolkit": "^1.8.5",
     "@testing-library/jest-dom": "^5.16.5",
     "@testing-library/react": "^13.4.0",
     "@testing-library/user-event": "^13.5.0",
@@ -11,9 +12,12 @@
     "@types/node": "^16.11.58",
     "@types/react": "^18.0.19",
     "@types/react-dom": "^18.0.6",
+    "immer": "^9.0.15",
+    "nanoid": "^4.0.0",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
     "react-scripts": "5.0.1",
+    "redux": "^4.2.0",
     "typescript": "^4.8.3",
     "web-vitals": "^2.1.4"
   },
