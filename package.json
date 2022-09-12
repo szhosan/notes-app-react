@@ -2,6 +2,7 @@
   "name": "notes-app-react",
   "version": "0.1.0",
   "private": true,
+  "homepage": "https://szhosan.github.io/notes-app-react/",
   "dependencies": {
     "@testing-library/jest-dom": "^5.16.5",
     "@testing-library/react": "^13.4.0",
