@@ -1,12 +1,12 @@
-import React from 'react'
-import { useDispatch } from 'react-redux'
-import { ReactComponent as IconAdd } from '../../images/add.svg'
-import { ReactComponent as IconArchive } from '../../images/archive.svg'
-import { ReactComponent as IconDelete } from '../../images/delete.svg'
-import { toggleShowArchived } from '../../redux/todosReducer'
+import React from 'react';
+import { useDispatch } from 'react-redux';
+import { ReactComponent as IconAdd } from '../../images/add.svg';
+import { ReactComponent as IconArchive } from '../../images/archive.svg';
+import { ReactComponent as IconDelete } from '../../images/delete.svg';
+import { toggleShowArchived } from '../../redux/todosReducer';
 
 const ToDoListHeader: React.FC = () => {
-  const dispatch = useDispatch()
+  const dispatch = useDispatch();
   return (
     <div className='todos_header_container'>
       <div className='todos_icon_cont'></div>
@@ -46,7 +46,7 @@ const ToDoListHeader: React.FC = () => {
         </button>
       </div>
     </div>
-  )
-}
+  );
+};
 
-export default ToDoListHeader
+export default ToDoListHeader;

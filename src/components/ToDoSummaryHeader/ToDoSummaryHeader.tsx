@@ -1,4 +1,4 @@
-import s from './ToDoSummaryHeader.module.css'
+import s from './ToDoSummaryHeader.module.css';
 
 const ToDoSummaryHeader: React.FC = () => {
   return (
@@ -8,7 +8,7 @@ const ToDoSummaryHeader: React.FC = () => {
       <div className={s.todos_active_cont}>Active</div>
       <div className={s.todos_archived_cont}>Archived</div>
     </div>
-  )
-}
+  );
+};
 
-export default ToDoSummaryHeader
+export default ToDoSummaryHeader;
