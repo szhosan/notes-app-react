@@ -3,11 +3,9 @@ import { useSelector } from 'react-redux';
 import ToDoListItem from '../ToDoListItem/ToDoListItem';
 import calculateTodoListStats from '../../helpers/calculateToDoListStat';
 import ToDoSummaryItem from '../ToDoSummaryItem/ToDoSummaryItem';
-import { useState } from 'react';
 
 const ToDoTable: React.FC<ITableProps> = (props: ITableProps) => {
   const items = useSelector((state: IRootState) => state.toDoList);
-  const [showModal, setShowModal] = useState(false);
   const showArchivedItems = useSelector((state: IRootState) => state.settings.showArchivedItems);
   return (
     <>
