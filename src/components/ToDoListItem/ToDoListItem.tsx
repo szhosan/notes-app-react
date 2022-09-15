@@ -1,7 +1,12 @@
 import { ITableItemProps } from '../../interfaces/interfaces';
 import classNames from 'classnames';
 import { useDispatch } from 'react-redux';
-import { removeItem, toggleArchived } from '../../redux/todosReducer';
+import {
+  removeItem,
+  toggleArchived,
+  setShowModal,
+  setToDoIdToEdit,
+} from '../../redux/todosReducer';
 
 const ToDoListItem: React.FC<ITableItemProps> = ({ data }: ITableItemProps) => {
   const dispatch = useDispatch();
@@ -26,6 +31,10 @@ const ToDoListItem: React.FC<ITableItemProps> = ({ data }: ITableItemProps) => {
           aria-label='edit'
           data-operation='edit'
           title='edit item'
+          onClick={() => {
+            dispatch(setToDoIdToEdit(id));
+            dispatch(setShowModal(true));
+          }}
         ></button>
         <button
           type='button'

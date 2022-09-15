@@ -16,10 +16,13 @@ export interface ITableSummaryItemProps {
 
 export interface IRootState {
   toDoList: IToDo[];
+  settings: ISettingsState;
 }
 
-export interface IManageState {
-  showArchivedItems: boolean;
+export interface ISettingsState {
+  showArchivedItems?: boolean;
+  showModal?: boolean;
+  toDoIdToEdit?: string | null;
 }
 
 export interface IToDo {
