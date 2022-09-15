@@ -119,3 +119,7 @@ button {
 .butt_delete {
   background-image: url('./images/delete.svg');
 }
+
+.is_archived {
+  color: brown;
+}

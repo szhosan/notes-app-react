@@ -2,7 +2,6 @@ import { ITableItemProps } from '../../interfaces/interfaces'
 import classNames from 'classnames'; 
 import { useDispatch } from 'react-redux';
 import { removeItem, toggleArchived  } from '../../redux/todosReducer';
-import './ToDoListItem.module.css';
 
 
 const ToDoListItem : React.FC<ITableItemProps> = ({data}:ITableItemProps) =>{
