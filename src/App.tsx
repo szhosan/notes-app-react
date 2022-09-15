@@ -1,27 +1,13 @@
-import React, { useEffect } from 'react';
-import logo from './logo.svg';
-import './App.css';
-import { useSelector, useDispatch } from 'react-redux';
-import {addItem, removeItem, editItem, toggleArchived} from './redux/todosReducer';
+import React from 'react';
+import Container from './components/Container/Container';
+import ToDoTable from './components/ToDoTable/ToDoTable';
+import ToDoListHeader from './components/ToDoListHeader/ToDoListHeader';
 
 const App: React.FC = () => {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <Container>
+      <ToDoTable header={<ToDoListHeader />}/>      
+    </Container>
   );
 }
 

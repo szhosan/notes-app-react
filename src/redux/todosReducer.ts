@@ -1,6 +1,9 @@
 
 import { combineReducers, createSlice, PayloadAction } from '@reduxjs/toolkit';
+import flatpickr from 'flatpickr';
 import { nanoid } from 'nanoid';
+import capitalize from '../helpers/capitalizeCategories';
+import ejectDatesFromStr from '../helpers/ejectDatesFromStr';
 import { IToDo } from '../interfaces/interfaces';
 
 const initialState: IToDo[] = [{
@@ -16,7 +19,7 @@ const initialState: IToDo[] = [{
   {
     'id': 'l29wmwom',
     'name': 'Task #2',
-    'category': 'task2',
+    'category': 'task',
     'categoryText': 'Task',
     'content': '15/10/2022 Content of task #1',
     'created': 'September 10, 2022',
@@ -29,7 +32,10 @@ const toDos = createSlice({name:'toDoList', initialState, reducers:{
         reducer: (state: IToDo[], {payload}: PayloadAction<IToDo>)=>[...state, payload],
         prepare: toDoItem=>{
             const id = nanoid();
-            return {payload: {id, ...toDoItem}}
+            const created = flatpickr.formatDate(new Date(), 'F d, Y');
+            const dates = ejectDatesFromStr(toDoItem.content);
+            const categoryText = capitalize(toDoItem.category);
+            return {payload: {...toDoItem, id, created, dates, categoryText}}
         },
     },
     removeItem:(state: IToDo[], {payload}: PayloadAction<string>)=>{
@@ -41,9 +47,9 @@ const toDos = createSlice({name:'toDoList', initialState, reducers:{
         {
             item.name = payload.name;
             item.category = payload.category;
-            item.categoryText = payload.categoryText;
+            item.categoryText = capitalize(payload.category);
             item.content = payload.content;
-            item.dates = payload.dates?payload.dates:[''];
+            item.dates = ejectDatesFromStr(payload.content);
         }
     },
     toggleArchived: (state: IToDo[], {payload}:PayloadAction<string>)=>{
