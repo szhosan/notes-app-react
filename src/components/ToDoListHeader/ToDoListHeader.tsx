@@ -1,11 +1,14 @@
 import React from 'react';
-import { useDispatch } from 'react-redux';
+import { useDispatch, useSelector } from 'react-redux';
 import { ReactComponent as IconAdd } from '../../images/add.svg';
 import { ReactComponent as IconArchive } from '../../images/archive.svg';
 import { ReactComponent as IconDelete } from '../../images/delete.svg';
-import { toggleShowArchived } from '../../redux/todosReducer';
+import { toggleShowArchived, setShowModal } from '../../redux/todosReducer';
+import { IRootState } from '../../interfaces/interfaces';
 
 const ToDoListHeader: React.FC = () => {
+  const showArchivedItems = useSelector((state: IRootState) => state.settings.showArchivedItems);
+  const btnColor = showArchivedItems ? 'dark-brown' : 'white';
   const dispatch = useDispatch();
   return (
     <div className='todos_header_container'>
@@ -22,8 +25,11 @@ const ToDoListHeader: React.FC = () => {
           aria-label='add new item'
           data-modal-open
           title='add new item'
+          onClick={() => {
+            dispatch(setShowModal(true));
+          }}
         >
-          <IconAdd fill='white' width={25} height={25} />
+          <IconAdd fill={btnColor} width={25} height={25} />
         </button>
         <button
           id='butt_archive'
@@ -33,7 +39,7 @@ const ToDoListHeader: React.FC = () => {
           title='show/hide archived items'
           onClick={() => dispatch(toggleShowArchived())}
         >
-          <IconArchive fill='white' width={25} height={25} />
+          <IconArchive fill={btnColor} width={25} height={25} />
         </button>
         <button
           id='butt_delete_all'
@@ -42,7 +48,7 @@ const ToDoListHeader: React.FC = () => {
           aria-label='delete all items'
           title='delete all items'
         >
-          <IconDelete fill='white' width={25} height={25} />
+          <IconDelete fill={btnColor} width={25} height={25} />
         </button>
       </div>
     </div>

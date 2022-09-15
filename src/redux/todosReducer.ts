@@ -3,7 +3,7 @@ import flatpickr from 'flatpickr';
 import { nanoid } from 'nanoid';
 import capitalize from '../helpers/capitalizeCategories';
 import ejectDatesFromStr from '../helpers/ejectDatesFromStr';
-import { IToDo } from '../interfaces/interfaces';
+import { ISettingsState, IToDo } from '../interfaces/interfaces';
 
 const initialState: IToDo[] = [
   {
@@ -64,17 +64,31 @@ const toDos = createSlice({
   },
 });
 
+const settingState: ISettingsState = {
+  showArchivedItems: false,
+  showModal: false,
+  toDoIdToEdit: null,
+};
+
 const showArchived = createSlice({
-  name: 'showArchivedItems',
-  initialState: false,
+  name: 'settings',
+  initialState: settingState,
   reducers: {
-    toggleShowArchived: (state: boolean) => !state,
+    toggleShowArchived: (state: ISettingsState) => {
+      return { ...state, showArchivedItems: !state.showArchivedItems };
+    },
+    setShowModal: (state: ISettingsState, { payload }: PayloadAction<boolean>) => {
+      return { ...state, showModal: payload };
+    },
+    setToDoIdToEdit: (state: ISettingsState, { payload }: PayloadAction<string | null>) => {
+      return { ...state, toDoIdToEdit: payload };
+    },
   },
 });
 
-export const { toggleShowArchived } = showArchived.actions;
+export const { toggleShowArchived, setShowModal, setToDoIdToEdit } = showArchived.actions;
 export const { addItem, removeItem, editItem, toggleArchived } = toDos.actions;
 export default combineReducers({
   toDoList: toDos.reducer,
-  showArchivedItems: showArchived.reducer,
+  settings: showArchived.reducer,
 });
