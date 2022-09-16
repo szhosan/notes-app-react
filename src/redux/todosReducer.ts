@@ -86,7 +86,7 @@ const toDos = createSlice({
     removeItem: (state: IToDo[], { payload }: PayloadAction<string>) => {
       return state.filter(({ id }) => id !== payload);
     },
-    removeAllItems: (_) => {
+    removeAllItems: () => {
       return [];
     },
     editItem: (state: IToDo[], { payload }: PayloadAction<IToDo>) => {
