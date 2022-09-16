@@ -12,6 +12,7 @@ const ToDoTable: React.FC<ITableProps> = (props: ITableProps) => {
       {props.header}
       {items &&
         (() => {
+          console.log(props.header.type.name);
           switch (props.header.type.name) {
             case 'ToDoListHeader':
               return (
