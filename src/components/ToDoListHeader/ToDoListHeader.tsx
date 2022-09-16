@@ -3,13 +3,29 @@ import { useDispatch, useSelector } from 'react-redux';
 import { ReactComponent as IconAdd } from '../../images/add.svg';
 import { ReactComponent as IconArchive } from '../../images/archive.svg';
 import { ReactComponent as IconDelete } from '../../images/delete.svg';
-import { toggleShowArchived, setShowModal } from '../../redux/todosReducer';
+import { toggleShowArchived, setShowModal, removeAllItems } from '../../redux/todosReducer';
 import { IRootState } from '../../interfaces/interfaces';
+import { confirmAlert } from 'react-confirm-alert'; // Import
+import 'react-confirm-alert/src/react-confirm-alert.css'; // Import css
 
 const ToDoListHeader: React.FC = () => {
   const showArchivedItems = useSelector((state: IRootState) => state.settings.showArchivedItems);
   const btnColor = showArchivedItems ? 'dark-brown' : 'white';
   const dispatch = useDispatch();
+
+  const confirmAndRemoveAll = () => {
+    confirmAlert({
+      title: 'Remove confirmation',
+      message: 'Remove all items from your list?',
+      buttons: [
+        {
+          label: 'Yes',
+          onClick: () => dispatch(removeAllItems()),
+        },
+      ],
+    });
+  };
+
   return (
     <div className='todos_header_container'>
       <div className='todos_icon_cont'></div>
@@ -47,6 +63,7 @@ const ToDoListHeader: React.FC = () => {
           className='todos_oper_button'
           aria-label='delete all items'
           title='delete all items'
+          onClick={confirmAndRemoveAll}
         >
           <IconDelete fill={btnColor} width={25} height={25} />
         </button>
