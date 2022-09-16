@@ -9,14 +9,11 @@ import toDoStore from './redux/store';
 
 const root = ReactDOM.createRoot(document.getElementById('root') as HTMLElement);
 root.render(
-  <React.StrictMode>
-    <Provider store={toDoStore.store}>
-      <PersistGate loading={null} persistor={toDoStore.persistor}>
-        <App />
-      </PersistGate>
-    </Provider>
-    ,
-  </React.StrictMode>,
+  <Provider store={toDoStore.store}>
+    <PersistGate loading={null} persistor={toDoStore.persistor}>
+      <App />
+    </PersistGate>
+  </Provider>,
 );
 
 // If you want to start measuring performance in your app, pass a function
