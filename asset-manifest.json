@@ -1,7 +1,7 @@
 {
   "files": {
-    "main.css": "/notes-app-react/static/css/main.4cd82d0f.css",
-    "main.js": "/notes-app-react/static/js/main.cf4106c1.js",
+    "main.css": "/notes-app-react/static/css/main.171b2b5f.css",
+    "main.js": "/notes-app-react/static/js/main.2e1d036b.js",
     "static/js/787.6dea6a4c.chunk.js": "/notes-app-react/static/js/787.6dea6a4c.chunk.js",
     "index.html": "/notes-app-react/index.html",
     "static/media/trophy.svg": "/notes-app-react/static/media/trophy.68fac7f0ff537cbb979c.svg",
@@ -11,12 +11,12 @@
     "static/media/edit.svg": "/notes-app-react/static/media/edit.965120e015b1324b3b55.svg",
     "static/media/idea.svg": "/notes-app-react/static/media/idea.e13cafeb4124203c48b8.svg",
     "static/media/archive.svg": "/notes-app-react/static/media/archive.994da31e0d0a8ccae01512cf3ce5d1f1.svg",
-    "main.4cd82d0f.css.map": "/notes-app-react/static/css/main.4cd82d0f.css.map",
-    "main.cf4106c1.js.map": "/notes-app-react/static/js/main.cf4106c1.js.map",
+    "main.171b2b5f.css.map": "/notes-app-react/static/css/main.171b2b5f.css.map",
+    "main.2e1d036b.js.map": "/notes-app-react/static/js/main.2e1d036b.js.map",
     "787.6dea6a4c.chunk.js.map": "/notes-app-react/static/js/787.6dea6a4c.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.4cd82d0f.css",
-    "static/js/main.cf4106c1.js"
+    "static/css/main.171b2b5f.css",
+    "static/js/main.2e1d036b.js"
   ]
 }
