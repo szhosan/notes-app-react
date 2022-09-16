@@ -1,5 +1,4 @@
 import { IToDo, IToDoStat } from '../interfaces/interfaces';
-import capitalize from './capitalizeCategories';
 
 export default function calculateTodoListStats(todoList: IToDo[]): IToDoStat[] {
   const res: IToDoStat[] = [];
@@ -7,7 +6,6 @@ export default function calculateTodoListStats(todoList: IToDo[]): IToDoStat[] {
   categories.map((category) => {
     res.push({
       category: category,
-      categoryText: capitalize(category),
       active: todoList.filter((todoItem) => todoItem.category === category && !todoItem.isArchived)
         .length,
       archivedAmount: todoList.filter(

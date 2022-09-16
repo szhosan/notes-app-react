@@ -7,10 +7,11 @@ import {
   setShowModal,
   setToDoIdToEdit,
 } from '../../redux/todosReducer';
+import capitalize from '../../helpers/capitalizeCategories';
 
 const ToDoListItem: React.FC<ITableItemProps> = ({ data }: ITableItemProps) => {
   const dispatch = useDispatch();
-  const { id, name, category, categoryText, content, created, isArchived, dates } = data;
+  const { id, name, category, content, created, isArchived, dates } = data;
   const containerClasses = classNames('todos_header_container', 'list_item', {
     // eslint-disable-next-line camelcase
     is_archived: isArchived,
@@ -21,7 +22,7 @@ const ToDoListItem: React.FC<ITableItemProps> = ({ data }: ITableItemProps) => {
       <div className={iconClasses}></div>
       <div className='todos_name_cont'>{name}</div>
       <div className='todos_created_cont'>{created}</div>
-      <div className='todos_category_cont'>{categoryText}</div>
+      <div className='todos_category_cont'>{capitalize(category)}</div>
       <div className='todos_content_cont'>{content}</div>
       <div className='todos_dates_cont'>{dates?.map((date) => date).join(', ')}</div>
       <div className='todos_butt_cont'>

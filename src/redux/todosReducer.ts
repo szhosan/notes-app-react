@@ -1,7 +1,6 @@
 import { combineReducers, createSlice, PayloadAction } from '@reduxjs/toolkit';
 import flatpickr from 'flatpickr';
 import { nanoid } from 'nanoid';
-import capitalize from '../helpers/capitalizeCategories';
 import ejectDatesFromStr from '../helpers/ejectDatesFromStr';
 import { ISettingsState, IToDo } from '../interfaces/interfaces';
 
@@ -10,7 +9,6 @@ const initialState: IToDo[] = [
     id: 'l28wmwom',
     name: 'Task #1',
     category: 'task',
-    categoryText: 'Task',
     content: '12/10/2022 Content of task #1',
     created: 'September 10, 2022',
     isArchived: false,
@@ -20,7 +18,6 @@ const initialState: IToDo[] = [
     id: 'l29wmwom',
     name: 'Task #2',
     category: 'task',
-    categoryText: 'Task',
     content: '15/10/2022 Content of task #1',
     created: 'September 10, 2022',
     isArchived: false,
@@ -30,7 +27,6 @@ const initialState: IToDo[] = [
     id: 'l30wmwom',
     name: 'Thought #77',
     category: 'thought',
-    categoryText: 'Random thought',
     content: '15/10/2022 Content of task #77',
     created: 'September 15, 2022',
     isArchived: false,
@@ -44,7 +40,6 @@ const initialState: IToDo[] = [
     isArchived: false,
     created: 'September 15, 2022',
     dates: [],
-    categoryText: 'Idea',
   },
   {
     id: 'SghfaCz902UALwjssQW9M',
@@ -54,7 +49,6 @@ const initialState: IToDo[] = [
     isArchived: true,
     created: 'September 14, 2022',
     dates: [],
-    categoryText: 'Idea',
   },
   {
     id: 'ubR2KOIfE5kfNro9kNJXn',
@@ -63,7 +57,6 @@ const initialState: IToDo[] = [
     content: 'Complete all tasks before 20/09/22',
     isArchived: false,
     created: 'September 15, 2022',
-    categoryText: 'Idea',
     dates: ['20/09/22'],
   },
   {
@@ -73,7 +66,6 @@ const initialState: IToDo[] = [
     content: 'Complete all tasks from 10/09/22 to 20/09/22',
     isArchived: false,
     created: 'September 15, 2022',
-    categoryText: 'Thought',
     dates: ['10/09/22', '20/09/22'],
   },
 ];
@@ -88,8 +80,7 @@ const toDos = createSlice({
         const id = nanoid();
         const created = flatpickr.formatDate(new Date(), 'F d, Y');
         const dates = ejectDatesFromStr(toDoItem.content);
-        const categoryText = capitalize(toDoItem.category);
-        return { payload: { ...toDoItem, id, created, dates, categoryText } };
+        return { payload: { ...toDoItem, id, created, dates } };
       },
     },
     removeItem: (state: IToDo[], { payload }: PayloadAction<string>) => {
@@ -100,7 +91,6 @@ const toDos = createSlice({
       if (item) {
         item.name = payload.name;
         item.category = payload.category;
-        item.categoryText = capitalize(payload.category);
         item.content = payload.content;
         item.dates = ejectDatesFromStr(payload.content);
       }
