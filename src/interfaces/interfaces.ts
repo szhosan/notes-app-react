@@ -2,8 +2,13 @@ export interface IProps {
   children: JSX.Element | JSX.Element[];
 }
 
+export enum HeaderType {
+  'list',
+  'stats',
+}
+
 export interface ITableProps {
-  header: JSX.Element;
+  headerType: HeaderType;
 }
 
 export interface ITableItemProps {

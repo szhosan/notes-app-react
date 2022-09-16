@@ -1,11 +1,9 @@
 import React from 'react';
 import Container from './components/Container/Container';
 import ToDoTable from './components/ToDoTable/ToDoTable';
-import ToDoListHeader from './components/ToDoListHeader/ToDoListHeader';
-import ToDoSummaryHeader from './components/ToDoSummaryHeader/ToDoSummaryHeader';
 import AddEditToDoForm from './components/AddEditToDoForm/AddEditToDoForm';
 import { useDispatch, useSelector } from 'react-redux';
-import { IRootState } from './interfaces/interfaces';
+import { HeaderType, IRootState } from './interfaces/interfaces';
 import Modal from '@mui/material/Modal';
 import Box from '@mui/material/Box';
 import { setShowModal, setToDoIdToEdit } from './redux/todosReducer';
@@ -32,10 +30,10 @@ const App: React.FC = () => {
   return (
     <>
       <Container>
-        <ToDoTable header={<ToDoListHeader />} />
+        <ToDoTable headerType={HeaderType.list} />
       </Container>
       <Container>
-        <ToDoTable header={<ToDoSummaryHeader />} />
+        <ToDoTable headerType={HeaderType.stats} />
       </Container>
       {isModalOpen && (
         <>

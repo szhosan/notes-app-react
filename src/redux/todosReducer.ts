@@ -86,6 +86,9 @@ const toDos = createSlice({
     removeItem: (state: IToDo[], { payload }: PayloadAction<string>) => {
       return state.filter(({ id }) => id !== payload);
     },
+    removeAllItems: (_) => {
+      return [];
+    },
     editItem: (state: IToDo[], { payload }: PayloadAction<IToDo>) => {
       const item = state.find(({ id }) => id === payload.id);
       if (item) {
@@ -127,7 +130,7 @@ const showArchived = createSlice({
 });
 
 export const { toggleShowArchived, setShowModal, setToDoIdToEdit } = showArchived.actions;
-export const { addItem, removeItem, editItem, toggleArchived } = toDos.actions;
+export const { addItem, removeItem, editItem, toggleArchived, removeAllItems } = toDos.actions;
 export default combineReducers({
   toDoList: toDos.reducer,
   settings: showArchived.reducer,
