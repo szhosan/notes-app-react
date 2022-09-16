@@ -1,22 +1,22 @@
 {
   "files": {
-    "main.css": "/notes-app-react/static/css/main.4cd82d0f.css",
-    "main.js": "/notes-app-react/static/js/main.5a693659.js",
+    "main.css": "/notes-app-react/static/css/main.94e31060.css",
+    "main.js": "/notes-app-react/static/js/main.ec8cfd5b.js",
     "static/js/787.6dea6a4c.chunk.js": "/notes-app-react/static/js/787.6dea6a4c.chunk.js",
     "index.html": "/notes-app-react/index.html",
-    "static/media/trophy.svg": "/notes-app-react/static/media/trophy.68fac7f0ff537cbb979c.svg",
-    "static/media/delete.svg": "/notes-app-react/static/media/delete.42b2a3dbb0c75a5117bfe568e27a01f7.svg",
-    "static/media/list.svg": "/notes-app-react/static/media/list.c5a2b165fecd5c4662d8.svg",
-    "static/media/add.svg": "/notes-app-react/static/media/add.b86f8d5d403fd22609e4d130c161c41e.svg",
-    "static/media/edit.svg": "/notes-app-react/static/media/edit.965120e015b1324b3b55.svg",
-    "static/media/idea.svg": "/notes-app-react/static/media/idea.e13cafeb4124203c48b8.svg",
-    "static/media/archive.svg": "/notes-app-react/static/media/archive.994da31e0d0a8ccae01512cf3ce5d1f1.svg",
-    "main.4cd82d0f.css.map": "/notes-app-react/static/css/main.4cd82d0f.css.map",
-    "main.5a693659.js.map": "/notes-app-react/static/js/main.5a693659.js.map",
+    "static/media/trophy.svg": "/notes-app-react/static/media/trophy.ef5bfb498c64b55b1964.svg",
+    "static/media/delete.svg": "/notes-app-react/static/media/delete.80eb3ad784177163372ac842a7632582.svg",
+    "static/media/list.svg": "/notes-app-react/static/media/list.ee7e3cc2af738b8e2c36.svg",
+    "static/media/add.svg": "/notes-app-react/static/media/add.9c8f0136fb0c7e3f85ae36471c40f626.svg",
+    "static/media/edit.svg": "/notes-app-react/static/media/edit.1d9c6a293ef0d3449d09.svg",
+    "static/media/idea.svg": "/notes-app-react/static/media/idea.29bcfa57fe01835d5499.svg",
+    "static/media/archive.svg": "/notes-app-react/static/media/archive.833666a9ebad4e6edcb24b5c59c84440.svg",
+    "main.94e31060.css.map": "/notes-app-react/static/css/main.94e31060.css.map",
+    "main.ec8cfd5b.js.map": "/notes-app-react/static/js/main.ec8cfd5b.js.map",
     "787.6dea6a4c.chunk.js.map": "/notes-app-react/static/js/787.6dea6a4c.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.4cd82d0f.css",
-    "static/js/main.5a693659.js"
+    "static/css/main.94e31060.css",
+    "static/js/main.ec8cfd5b.js"
   ]
 }
