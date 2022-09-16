@@ -34,7 +34,7 @@ const AddEditToDoForm: React.FC = () => {
 
   const handleChange = (e: ChangeEvent<HTMLInputElement>) => {
     const { name, value } = e.currentTarget;
-    setToDo((prevState: any) => {
+    setToDo((prevState: IToDo) => {
       return { ...prevState, [name]: value };
     });
   };
