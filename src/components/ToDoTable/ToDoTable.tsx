@@ -7,12 +7,13 @@ import ToDoSummaryItem from '../ToDoSummaryItem/ToDoSummaryItem';
 const ToDoTable: React.FC<ITableProps> = (props: ITableProps) => {
   const items = useSelector((state: IRootState) => state.toDoList);
   const showArchivedItems = useSelector((state: IRootState) => state.settings.showArchivedItems);
+  console.log(items);
+  console.log(props.header.type.name);
   return (
     <>
       {props.header}
       {items &&
         (() => {
-          console.log(props.header.type.name);
           switch (props.header.type.name) {
             case 'ToDoListHeader':
               return (
