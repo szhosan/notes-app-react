@@ -65,7 +65,7 @@ const initialState: IToDo[] = [
     category: 'thought',
     content: 'Complete all tasks from 10/09/22 to 20/09/22',
     isArchived: false,
-    created: 'September 15, 2022',
+    created: 'September 16, 2022',
     dates: ['10/09/22', '20/09/22'],
   },
 ];
