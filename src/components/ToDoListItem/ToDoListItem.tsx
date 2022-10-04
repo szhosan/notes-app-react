@@ -20,8 +20,7 @@ const ToDoListItem: React.FC<ITableItemProps> = ({ data }: ITableItemProps) => {
     },
   );
   const iconClasses = classNames(
-    'flex-auto min-h-11 h-11 w-11 bg-no-repeat bg-center bg-auto',
-    `bg-${category}`,
+    `flex-auto min-h-11 h-11 w-11 bg-no-repeat bg-center bg-auto bg-${category}`,
   );
   const btnClasses = classNames(
     'flex p-0 items-center justify-center mr-2 w-8 h-8 border-0 bg-no-repeat bg-center opacity-60',
@@ -37,7 +36,7 @@ const ToDoListItem: React.FC<ITableItemProps> = ({ data }: ITableItemProps) => {
       <div className='flex'>
         <button
           type='button'
-          className={btnClasses + ' btnEdit'}
+          className={btnClasses + ' bg-btnEdit'}
           aria-label='edit'
           data-operation='edit'
           title='edit item'
@@ -48,7 +47,7 @@ const ToDoListItem: React.FC<ITableItemProps> = ({ data }: ITableItemProps) => {
         ></button>
         <button
           type='button'
-          className='todos_oper_button butt_archive'
+          className={btnClasses + ' bg-btnArchive'}
           aria-label='archive'
           data-operation='archive'
           title='change archive status'
@@ -58,7 +57,7 @@ const ToDoListItem: React.FC<ITableItemProps> = ({ data }: ITableItemProps) => {
         ></button>
         <button
           type='button'
-          className='todos_oper_button butt_delete'
+          className={btnClasses + ' bg-btnDelete'}
           aria-label='delete'
           data-operation='delete'
           title='delete item'
