@@ -27,14 +27,14 @@ const ToDoListHeader: React.FC = () => {
   };
 
   return (
-    <div className='todos_header_container'>
-      <div className='todos_icon_cont'></div>
-      <div className='todos_name_cont'>Name</div>
-      <div className='todos_created_cont'>Created</div>
-      <div className='todos_category_cont'>Category</div>
-      <div className='todos_content_cont'>Content</div>
-      <div className='todos_dates_cont'>Dates</div>
-      <div className='todos_butt_cont'>
+    <div className='flex mb-2 h-11 bg-zinc-500 rounded rounded-md items-center font-bold text-lg text-white'>
+      <div className='flex-auto w-11'></div>
+      <div className='flex-auto w-64'>Name</div>
+      <div className='flex-auto w-32'>Created</div>
+      <div className='flex-auto w-40'>Category</div>
+      <div className='flex-auto w-80'>Content</div>
+      <div className='flex-auto w-52'>Dates</div>
+      <div className='flex'>
         <button
           type='button'
           className='todos_oper_button'
