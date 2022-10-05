@@ -1,12 +1,10 @@
-import s from './ToDoSummaryHeader.module.css';
-
 const ToDoSummaryHeader: React.FC = () => {
   return (
-    <div className='todos_header_container'>
-      <div className='todos_icon_cont'></div>
-      <div className={s.todos_note_category_cont}>Note Category</div>
-      <div className={s.todos_active_cont}>Active</div>
-      <div className={s.todos_archived_cont}>Archived</div>
+    <div className='flex mb-2 h-11 bg-zinc-500 rounded rounded-md items-center font-bold text-lg text-white'>
+      <div className='flex w-16'></div>
+      <div className='flex w-80'>Note Category</div>
+      <div className='flex w-60'>Active</div>
+      <div className='flex w-64'>Archived</div>
     </div>
   );
 };

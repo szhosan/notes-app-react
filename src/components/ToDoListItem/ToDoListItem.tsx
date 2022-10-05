@@ -20,10 +20,19 @@ const ToDoListItem: React.FC<ITableItemProps> = ({ data }: ITableItemProps) => {
     },
   );
   const iconClasses = classNames(
-    `flex-auto min-h-11 h-11 w-11 bg-no-repeat bg-center bg-auto bg-${category}`,
+    'flex-auto min-h-11 h-11 w-11 bg-no-repeat bg-center bg-contain',
+    {
+      'bg-ideaIco': category === 'idea',
+    },
+    {
+      'bg-thoughtIco': category === 'thought',
+    },
+    {
+      'bg-taskIco': category === 'task',
+    },
   );
   const btnClasses = classNames(
-    'flex p-0 items-center justify-center mr-2 w-8 h-8 border-0 bg-no-repeat bg-center opacity-60',
+    'flex p-0 items-center justify-center mr-2 w-8 h-8 border-0 bg-no-repeat bg-center opacity-60 cursor-pointer',
   );
   return (
     <div className={containerClasses}>

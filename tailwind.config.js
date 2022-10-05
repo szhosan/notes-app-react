@@ -4,9 +4,9 @@ module.exports = {
   theme: {
     extend: {
       backgroundImage: {
-        idea: "url('./images/idea.svg')",
-        thought: "url('./images/trophy.svg')",
-        task: "url('./images/list.svg')",
+        ideaIco: "url('./images/idea.svg')",
+        thoughtIco: "url('./images/trophy.svg')",
+        taskIco: "url('./images/list.svg')",
         btnEdit: "url('./images/edit.svg')",
         btnArchive: "url('./images/archive.svg')",
         btnDelete: "url('./images/delete.svg')",
